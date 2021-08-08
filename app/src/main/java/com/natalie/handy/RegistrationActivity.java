@@ -24,10 +24,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class RegistrationActivity extends AppCompatActivity {
     //Variables
-    EditText et_full_name, et_email_address, et_phone_number, et_password;
-    DatabaseReference reference;
-    CheckBox conditions;
-    long maxId = 0;
+    private EditText et_full_name, et_email_address, et_phone_number, et_password;
+    private DatabaseReference reference;
+    private CheckBox conditions;
+    private long maxId = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,11 +89,10 @@ public class RegistrationActivity extends AppCompatActivity {
         if (val_phone_number.isEmpty()) {
             et_phone_number.setError("Field cannot be empty");
             return false;
-        }else if(et_phone_number.length()<10){
+        } else if (et_phone_number.length() < 10 || et_phone_number.length() > 10) {
             et_phone_number.setError("Enter a valid phone number");
             return false;
-        }
-        else {
+        } else {
             et_phone_number.setError(null);
             return true;
         }
@@ -178,6 +177,7 @@ public class RegistrationActivity extends AppCompatActivity {
         });
     }
 
+    //open sign in activity
     public void sign_in(View view) {
         Intent myIntent = new Intent(this, LoginActivity.class);
         startActivity(myIntent);

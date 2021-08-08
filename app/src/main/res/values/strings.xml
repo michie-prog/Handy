@@ -18,5 +18,15 @@
     <string name="verify">Verify</string>
     <string name="update">Update</string>
     <string name="accept_terms_and_conditions">Accept Terms and conditions</string>
+    <string name="services">Services</string>
+    <string name="profile_details">Profile details</string>
+    <string name="history_of_requests">History of requests</string>
     <string name="logout">Logout</string>
+    <string name="user_profile">user_profile</string>
+    <string name="natalie_aoya">Natalie Aoya</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="choose_profile_picture">Choose Profile Picture</string>
+    <string name="reset_password">Reset Password</string>
 </resources>

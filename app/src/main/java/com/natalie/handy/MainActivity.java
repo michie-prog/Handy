@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                     FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
                     //if the user has not logged out
                     if (firebaseUser != null) {
-                        Intent i = new Intent(MainActivity.this, UserProfileActivity.class);
+                        Intent i = new Intent(MainActivity.this, MainActivity2.class);
                         startActivity(i);
                     } else {
                         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
