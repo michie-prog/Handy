@@ -5,35 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".UserProfileActivity">
+    tools:context=".ProfileFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:background="@color/dark_grey"
+            android:layout_height="150dp"
+            android:gravity="center"
             android:padding="20dp">
 
             <ImageView
                 android:id="@+id/profile_image"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/logo" />
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:layout_toRightOf="@id/profile_image"
-                android:text="Natalie Aoya"
-                android:textSize="25dp"
-                android:textStyle="bold" />
+                android:src="@mipmap/ic_launcher_round" />
         </RelativeLayout>
 
         <LinearLayout
@@ -56,10 +45,11 @@
                     android:id="@+id/full_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_person"
                     android:drawableLeft="@drawable/ic_person"
                     android:drawablePadding="20dp"
                     android:inputType="textCapWords"
-                    android:text="Natalie Aoya"
+                    android:text="@string/natalie_aoya"
                     android:textColor="@color/dark_grey" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -77,6 +67,7 @@
                     android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_email"
                     android:drawableLeft="@drawable/ic_email"
                     android:drawablePadding="20dp"
                     android:inputType="textEmailAddress"
@@ -98,6 +89,7 @@
                     android:id="@+id/phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_phone"
                     android:drawableLeft="@drawable/ic_phone"
                     android:drawablePadding="20dp"
                     android:inputType="numberDecimal"
@@ -135,12 +127,12 @@
                 android:text="@string/update" />
 
             <Button
-                android:id="@+id/btn_logout"
+                android:id="@+id/btn_reset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/button"
-                android:text="@string/logout" />
-
+                android:text="@string/reset_password" />
         </LinearLayout>
     </LinearLayout>
 

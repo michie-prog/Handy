@@ -25,9 +25,6 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity2 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawer;
-    AlertDialog.Builder reset_alert;
-    LayoutInflater inflater;
-    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +36,6 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        reset_alert = new AlertDialog.Builder(this);
-        inflater = this.getLayoutInflater();
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -96,31 +90,4 @@ public class MainActivity2 extends AppCompatActivity implements NavigationView.O
         return true;
     }
 
-    public void reset_password(View view) {
-        View v = inflater.inflate(R.layout.reset_pop, null);
-        //start alert dialog
-        reset_alert.setTitle("Reset Password ?").setMessage("Please enter your email address to get the password reset link").setPositiveButton("Reset", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                //validate the email address
-                EditText email = v.findViewById(R.id.email);
-                if (email.getText().toString().isEmpty()) {
-                    email.setError("Required Field");
-                    return;
-                }
-                //send the reset link
-                firebaseAuth.sendPasswordResetEmail(email.getText().toString()).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(getApplicationContext(), "Reset password email sent", Toast.LENGTH_SHORT).show();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
-        }).setNegativeButton("Cancel", null).setView(v).create().show();
-    }
 }
